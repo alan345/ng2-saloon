@@ -17,9 +17,11 @@ import {ToastModule, ToastOptions} from 'ng2-toastr';
 import {LoginComponent} from './client/user/login/login.component';
 import {ErrorComponent} from './client/errorHandler/error.component';
 import {MainPageComponent} from './client/mainPage/mainPage.component';
+import {CompanieComponent} from './client/companie/companie.component';
 import {ResetPasswordComponent} from './client/user/accountRecover/resetPassword.component';
 import {ForgetPasswordComponent} from './client/user/accountRecover/forgetPassword.component';
 import {FormService} from './client/form/form.service';
+import {CompanieService} from './client/companie/companie.service';
 import {UserFormComponent} from './client/userForms/formsTable/userForms.component';
 import {EditUserFormComponent} from './client/userForms/editForm/editUserForm.component';
 import {ProgressBarModule} from 'ng2-progress-bar';
@@ -50,6 +52,7 @@ let options = <ToastOptions> {
     NavbarComponent,
     ErrorComponent,
     MainPageComponent,
+    CompanieComponent,
     ResetPasswordComponent,
     ForgetPasswordComponent,
     UserFormComponent,
@@ -77,6 +80,7 @@ let options = <ToastOptions> {
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     AuthService,
     ErrorService,
+    CompanieService,
     FormService,
     AdminService,
     AdminGuardService,

@@ -35,6 +35,11 @@ import { UserProfileComponent } from './client/user/profile/userProfile.componen
 import {ProfileService} from "./client/user/profile/profile.service";
 import { ChangePasswordComponent } from './client/user/profile/changePassword/changePassword.component';
 
+import {Ng2PaginationModule} from 'ng2-pagination'; // <-- import the module
+
+
+
+
 let options = <ToastOptions> {
   animate: 'flyRight',
   positionClass: 'toast-top-right',
@@ -74,7 +79,9 @@ let options = <ToastOptions> {
     routing,
     ToastModule.forRoot(options),
     ProgressBarModule,
-    BrowserModule, FormsModule
+    BrowserModule,
+    FormsModule,
+    Ng2PaginationModule
   ],
   providers: [
     AuthGuardService,

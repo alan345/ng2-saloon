@@ -93,16 +93,13 @@ router.get('/page/:page', function (req, res, next) {
 
       });
 
-
-
 });
-
 
 
 
 // getting user forms to display them on front end
 router.get('/:id', function (req, res, next) {
-  User.findById(({_id: req.user._id}), function (err) {
+  Companie.findById(({_id: req.companie._id}), function (err, item) {
     if (err) {
       return res.status(404).json({
         message: 'No forms found for this user',
@@ -110,18 +107,10 @@ router.get('/:id', function (req, res, next) {
       })
     }
     else {
-      Form.find(({owner: req.user._id}), function (err, forms) {
-        if (err) {
-          return res.status(404).json({
-            message: 'An error occured',
-            err: err
-          })
-        }
-        res.status(200).json({
-          message: 'Success',
-          forms: forms
-        });
-      })
+      res.status(200).json({
+        message: 'Success',
+        item: item
+      });
     }
   })
 });

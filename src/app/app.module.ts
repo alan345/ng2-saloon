@@ -37,6 +37,10 @@ import { ChangePasswordComponent } from './client/user/profile/changePassword/ch
 
 import {Ng2PaginationModule} from 'ng2-pagination'; // <-- import the module
 
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+
+
 
 
 
@@ -81,7 +85,9 @@ let options = <ToastOptions> {
     ProgressBarModule,
     BrowserModule,
     FormsModule,
-    Ng2PaginationModule
+    Ng2PaginationModule,
+    ModalModule.forRoot(),
+    BootstrapModalModule
   ],
   providers: [
     AuthGuardService,

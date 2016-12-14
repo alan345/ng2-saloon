@@ -35,7 +35,6 @@ import { UserProfileComponent } from './client/user/profile/userProfile.componen
 import {ProfileService} from "./client/user/profile/profile.service";
 import { ChangePasswordComponent } from './client/user/profile/changePassword/changePassword.component';
 
-
 let options = <ToastOptions> {
   animate: 'flyRight',
   positionClass: 'toast-top-right',
@@ -62,7 +61,8 @@ let options = <ToastOptions> {
     EditUsersFormsComponent,
     AdminComponent,
     UserProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -73,7 +73,8 @@ let options = <ToastOptions> {
     ReactiveFormsModule,
     routing,
     ToastModule.forRoot(options),
-    ProgressBarModule
+    ProgressBarModule,
+    BrowserModule, FormsModule
   ],
   providers: [
     AuthGuardService,

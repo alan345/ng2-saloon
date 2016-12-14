@@ -19,14 +19,15 @@ export class CompanieService {
   constructor(private http: Http, private errorService: ErrorService, private toastr: ToastsManager) {}
 
   // get user forms from backend in order to display them in the front end
-  getCompanies() {
+  getCompanies(page: number) {
+
     let headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', '' + this.token);
-    return this.http.get(this.url + 'companie/' , {headers: headers})
+    return this.http.get(this.url + 'companie/page/' + page , {headers: headers})
       .timeout(1000)
       .map((response: Response) => {
 
-        const companies = response.json().companies;
+        const companies = response.json();
 
         return companies;
       })

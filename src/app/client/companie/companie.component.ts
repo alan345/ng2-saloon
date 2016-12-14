@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../auth/auth.service';
 import {CompanieService} from './companie.service';
 
+
+
 @Component({
   selector: 'app-companie',
   templateUrl: 'companie.component.html',
@@ -10,17 +12,18 @@ import {CompanieService} from './companie.service';
 
 export class CompanieComponent implements OnInit {
   fetchedCompanies = [];
-  test = "alanNON";
+
 
   constructor(private companieService: CompanieService) {
   }
 
+
   ngOnInit() {
-    this.companieService.getCompanies()
+    this.companieService.getCompanies(1)
       .subscribe(
         companies => {
       //    console.log(companies);
-          this.fetchedCompanies =  companies
+          this.fetchedCompanies =  companies.data
         },
         error => {
           console.log(error);
@@ -28,9 +31,6 @@ export class CompanieComponent implements OnInit {
       );
   }
 
-  // onDelete(formId) {
-  //   this.companieService.deleteForm(formId)
-  //     .subscribe();
-  // }
+
 
 }
